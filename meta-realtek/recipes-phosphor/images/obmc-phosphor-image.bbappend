@@ -17,6 +17,9 @@ OBMC_IMAGE_EXTRA_INSTALL:append = " \
                     'rts4931a-escm rts4932a-escm','phosphor-skeleton-control-power ','',d)} \
 "
 
+OBMC_IMAGE_EXTRA_INSTALL:append:rts4931a-escm = " phosphor-watchdog"
+OBMC_IMAGE_EXTRA_INSTALL:append:rts4932a-escm = " phosphor-watchdog"
+
 #autologin for debug
 IMAGE_FEATURES += "empty-root-password serial-autologin-root allow-root-login allow-empty-password"
 IMAGE_FEATURES:remove = "\

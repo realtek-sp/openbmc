@@ -19,8 +19,9 @@ SYSTEMD_PACKAGES:append = "${@bb.utils.contains_any('MACHINE', \
 
 SYSTEMD_SERVICE:${PN}-rts493xa-escm += "rts493xa-escm-init-state.service"
 
-#diable host watchdog, not support it for now
 HOST_ERROR_TARGETS = ""
+HOST_ERROR_TARGETS:append:rts4931a-escm = " timeout"
+HOST_ERROR_TARGETS:append:rts4932a-escm = " timeout"
 #disable depends for fan control
 FAN_LINK_FMT = ""
 SYSTEMD_SERVICE:${PN}-obmc-targets:remove = " \
